@@ -3,6 +3,7 @@ version: '1.0'
 steps:
   clone-jim:
     type: git-clone
+    revision: abcdef12345
     repo: github.com/blamco/jim
 
   unit-test-jim:
