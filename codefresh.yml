@@ -1,44 +1,45 @@
 version: '1.0'
 
-clone-jim:
-  type: git-clone
-  repo: git@github.com/blamco/jim
+steps:
+  clone-jim:
+    type: git-clone
+    repo: git@github.com/blamco/jim
 
-unit-test-jim:
-  image: go:onbuild
-  working-directory: ${{clone-jim}}
-  commands: 
-    - go test
+  unit-test-jim:
+    image: go:onbuild
+    working-directory: ${{clone-jim}}
+    commands: 
+      - go test
 
-integration-tests:
-  type: composition
-  image: alpine
-  working-directory: ${{clone-jim}}
-  composition-file: integ-test-composition.yml
-  commands:
-    - tests/exec.sh
+  integration-tests:
+    type: composition
+    image: alpine
+    working-directory: ${{clone-jim}}
+    composition-file: integ-test-composition.yml
+    commands:
+      - tests/exec.sh
 
-build-jim:
-  type: build
-  description: It builds the Jim Service
-  base-image: go:onbuild
-  dockerfile: Dockerfile
-  image-name: blamco/jim
-  tag: develop
-  working-directory: ${{clone-jim}}
-  environment:
-    - PORT=9000
-  build-arguments: --no-cache,--pull
+  build-jim:
+    type: build
+    description: It builds the Jim Service
+    base-image: go:onbuild
+    dockerfile: Dockerfile
+    image-name: blamco/jim
+    tag: develop
+    working-directory: ${{clone-jim}}
+    environment:
+      - PORT=9000
+    build-arguments: --no-cache,--pull
 
-push-dockerhub:
-  type: push
-  candidate: ${{build-jim}}
-  tag: latest
+  push-dockerhub:
+    type: push
+    candidate: ${{build-jim}}
+    tag: latest
 
-deploy-aws:
-  type: deploy
-  image: alpine
-  candidate: ${{push-dockerhub}}
-  environment:
-    - AWS_ID=value
-    - AWS_SECRET=value
+  deploy-aws:
+    type: deploy
+    image: alpine
+    candidate: ${{push-dockerhub}}
+    environment:
+      - AWS_ID=value
+      - AWS_SECRET=value
