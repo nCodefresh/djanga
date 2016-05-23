@@ -12,6 +12,7 @@ steps:
     commands: 
       - cd djanga
       - ls -l
+      - echo "jimbob"
 
   integration-tests:
     type: composition
