@@ -7,10 +7,11 @@ steps:
   #  repo: https://github.com/noamt/djanga.git
 
   unit-test-jim:
-    image: go:onbuild
+    image: alpine:latest
     working-directory: ${{clone-jim}}
     commands: 
-      - go test
+      - cd djanga
+      - ls -l
 
   integration-tests:
     type: composition
