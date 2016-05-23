@@ -3,8 +3,8 @@ version: '1.0'
 steps:
   clone-jim:
     type: git-clone
-    revision: abcdef12345
-    repo: github.com/blamco/jim
+    revision: cfeb549e834714c0447658a8b539a102814a1823
+    repo: https://github.com/noamt/djanga.git
 
   unit-test-jim:
     image: go:onbuild
