@@ -31,9 +31,6 @@ steps:
     working-directory: ${{clone-jim}}
     environment:
       - PORT=9000
-    build-arguments:
-      - jim
-      - bob=jim
 
   push-dockerhub:
     type: push
