@@ -29,8 +29,8 @@ steps:
     image-name: blamco/jim
     tag: develop
     working-directory: ${{clone-jim}}
-    build-arguments:
-      - PORT=9000
+    #build-arguments:
+    #  - PORT=9000
 
   push-dockerhub:
     type: push
