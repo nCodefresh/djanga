@@ -25,14 +25,15 @@ steps:
   build-jim:
     type: build
     description: It builds the Jim Service
-    base-image: go:onbuild
     dockerfile: Dockerfile
     image-name: blamco/jim
     tag: develop
     working-directory: ${{clone-jim}}
     environment:
       - PORT=9000
-    build-arguments: --no-cache,--pull
+    build-arguments:
+      - jim
+      - bob=jim
 
   push-dockerhub:
     type: push
