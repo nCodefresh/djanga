@@ -32,6 +32,14 @@ steps:
     #build-arguments:
     #  - PORT=9000
 
+  build-jim:
+    type: build
+    description: It builds the Jim Service
+    dockerfile: Dockerfile
+    image-name: blamco/jimbob
+    tag: developpp
+    working-directory: ${{clone-jim}}
+
   push-dockerhub:
     type: push
     candidate: ${{build-jim}}
