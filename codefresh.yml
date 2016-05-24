@@ -9,9 +9,9 @@ steps:
   unit-test-jim:
     image: alpine:latest
     commands: 
-      - cd djanga
       - ls -l
-      - echo "jimbob"
+      - touch jimbob.txt
+      - echo "jimbob" > jimbob.txt
 
   integration-tests:
     type: composition
