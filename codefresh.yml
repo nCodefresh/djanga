@@ -8,7 +8,6 @@ steps:
 
   unit-test-jim:
     image: alpine:latest
-    working-directory: ${{clone-jim}}
     commands: 
       - cd djanga
       - ls -l
@@ -28,7 +27,6 @@ steps:
     dockerfile: Dockerfile
     image-name: blamco/jim
     tag: develop
-    working-directory: ${{clone-jim}}
     #build-arguments:
     #  - PORT=9000
 
@@ -38,7 +36,7 @@ steps:
     dockerfile: Dockerfile
     image-name: blamco/jimbob
     tag: developpp
-    working-directory: ${{clone-jim}}
+    working-directory: ${{unit-test-jim}}
 
   push-dockerhub:
     type: push
