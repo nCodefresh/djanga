@@ -44,12 +44,4 @@ steps:
   push-dockerhub:
     type: push
     candidate: ${{build-jim}}
-    tag: thanks
-
-  deploy-aws:
-    type: deploy
-    image: alpine
-    candidate: ${{push-dockerhub}}
-    environment:
-      - AWS_ID=value
-      - AWS_SECRET=value
+    tag: thanksmuch
