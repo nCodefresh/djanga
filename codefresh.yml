@@ -28,8 +28,8 @@ steps:
     type: build
     description: It builds the Jim Service
     dockerfile: Dockerfile
-    image-name: blamco/jim
-    tag: develop
+    image-name: noamt/djanga
+    tag: nicetag
     #build-arguments:
     #  - PORT=9000
 
@@ -44,7 +44,7 @@ steps:
   push-dockerhub:
     type: push
     candidate: ${{build-jim}}
-    tag: thenewtag
+    tag: thanks
 
   deploy-aws:
     type: deploy
