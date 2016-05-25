@@ -12,6 +12,9 @@ steps:
       - ls -l
       - touch jimbob.txt
       - echo "jimbob" > jimbob.txt
+    environment:
+      - JIM=BOB
+      - PORT=9000
 
   integration-tests:
     type: composition
