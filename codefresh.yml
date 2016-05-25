@@ -33,18 +33,18 @@ steps:
     #build-arguments:
     #  - PORT=9000
 
-  build-bob:
-    type: build
-    description: It builds the Jim Service
-    dockerfile: Dockerfile
-    image-name: blamco/jimbob
-    tag: developpp
-    working-directory: ${{unit-test-jim}}
+  #build-bob:
+  #  type: build
+  #  description: It builds the Jim Service
+  #  dockerfile: Dockerfile
+  #  image-name: blamco/jimbob
+  #  tag: developpp
+  #  working-directory: ${{unit-test-jim}}
 
   push-dockerhub:
     type: push
     candidate: ${{build-jim}}
-    tag: latest
+    tag: thenewtag
 
   deploy-aws:
     type: deploy
