@@ -7,7 +7,7 @@ steps:
   #  repo: https://github.com/noamt/djanga.git
 
   unit-test-jim:
-    image: python
+    image: python:alpine
     commands: 
       - python -m unittest composeexample.utils
     environment:
