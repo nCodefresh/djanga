@@ -7,11 +7,9 @@ steps:
   #  repo: https://github.com/noamt/djanga.git
 
   unit-test-jim:
-    image: alpine:latest
+    image: python:alpine
     commands: 
-      - ls -l
-      - touch jimbob.txt
-      - echo "jimbob" > jimbob.txt
+      - python -m unittest composeexample.utils
     environment:
       - JIM=BOB
       - PORT=9000
@@ -41,7 +39,7 @@ steps:
   #  tag: developpp
   #  working-directory: ${{unit-test-jim}}
 
-  push-dockerhub:
-    type: push
-    candidate: ${{build-jim}}
-    tag: thanksmuch
+  #push-dockerhub:
+  #  type: push
+  #  candidate: ${{build-jim}}
+  #  tag: thanksmuch
