@@ -39,7 +39,7 @@ steps:
   #  tag: developpp
   #  working-directory: ${{unit-test-jim}}
 
-  #push-dockerhub:
-  #  type: push
-  #  candidate: ${{build-jim}}
-  #  tag: thanksmuch
+  push-dockerhub:
+    type: push
+    candidate: ${{build-jim}}
+    tag: verymuchthanksmuch
