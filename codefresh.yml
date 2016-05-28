@@ -1,12 +1,7 @@
 version: '1.0'
 
 steps:
-  #clone-jim:
-  #  type: git-clone
-  #  revision: cfeb549e834714c0447658a8b539a102814a1823
-  #  repo: https://github.com/noamt/djanga.git
-
-  unit-test-jim:
+  unit-test:
     image: python:2-alpine
     commands: 
       - python -m unittest composeexample.utils
@@ -14,32 +9,25 @@ steps:
       - JIM=BOB
       - PORT=9000
 
-  integration-tests:
-    type: composition
-    image: alpine
-    working-directory: ${{clone-jim}}
-    composition-file: integ-test-composition.yml
-    commands:
-      - tests/exec.sh
+  # Not implemented yet
+  #integration-tests:
+  #  type: composition
+  #  image: alpine
+  #  working-directory: ${{clone-jim}}
+  #  composition-file: integ-test-composition.yml
+  #  commands:
+  #    - tests/exec.sh
 
-  build-jim:
+  build-djanga:
     type: build
-    description: It builds the Jim Service
+    description: It builds the Djanga Service
     dockerfile: Dockerfile
     image-name: noamt/djanga
     tag: nicetag
     #build-arguments:
-    #  - PORT=9000
-
-  #build-bob:
-  #  type: build
-  #  description: It builds the Jim Service
-  #  dockerfile: Dockerfile
-  #  image-name: blamco/jimbob
-  #  tag: developpp
-  #  working-directory: ${{unit-test-jim}}
+    #  - FOO=BAR
 
   push-dockerhub:
     type: push
-    candidate: ${{build-jim}}
-    tag: verymuchthanksmuch
+    candidate: ${{build-djanga}}
+    tag: awesomeness
