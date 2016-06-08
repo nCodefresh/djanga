@@ -4,7 +4,7 @@ steps:
   unit-test:
     image: python:2-alpine
     commands: 
-      - exit 1
+      - exit 0
     environment:
       - JIM=BOB
       - PORT=9000
@@ -27,7 +27,7 @@ steps:
     #build-arguments:
     #  - FOO=BAR
 
-  #push-dockerhub:
-  #  type: push
-  #  candidate: ${{build-djanga}}
-  #  tag: awesomeness
+  push-dockerhub:
+    type: push
+    candidate: ${{build-djanga}}
+    tag: awesomeness
