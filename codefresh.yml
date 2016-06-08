@@ -1,6 +1,10 @@
 version: '1.0'
 
 steps:
+  clone-prj:
+    type: git-clone
+    repo: https://github.com/nCodefresh/docker-spring-boot.git
+  
   unit-test:
     image: python:2-alpine
     commands: 
