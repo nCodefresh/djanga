@@ -10,7 +10,7 @@ steps:
     commands: 
       - exit 0
     environment:
-      - JIM=BOB
+      - JIM=JIM
       - PORT=9000
 
   # Not implemented yet
