@@ -1,4 +1,4 @@
-= Djanga!!!!
+= Djanga!!
 
 
 A Codefresh onboarding tutorial.
