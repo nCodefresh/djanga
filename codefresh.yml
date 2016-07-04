@@ -10,8 +10,8 @@ steps:
     commands: 
       - exit 0
     environment:
-      - JIM=JIM
-      - PORT=9000
+      - JIM=${{JIM}}
+      - PORT=${{PORT}}
 
   # Not implemented yet
   #integration-tests:
