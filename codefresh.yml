@@ -22,16 +22,16 @@ steps:
   #  commands:
   #    - tests/exec.sh
 
-  build-djanga:
+  build-${{djanga}}:
     type: build
     description: It builds the Djanga Service
     dockerfile: Dockerfile
-    image-name: noamt/djanga
+    image-name: noamt/${{djanga}}
     tag: nicetag
     #build-arguments:
     #  - FOO=BAR
 
   #push-dockerhub:
   #  type: push
-  #  candidate: ${{build-djanga}}
+  #  candidate: ${{build-${{djanga}}}}
   #  tag: awesomeness
