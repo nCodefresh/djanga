@@ -1,6 +1,6 @@
 = DjangaI!
 A Codefresh onboarding tutorial.
-
+asd
 
 o
 Use this humble repository to familiarize yourself with basic Codefresh functionality once you've got the development
