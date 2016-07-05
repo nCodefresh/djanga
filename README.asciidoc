@@ -2,6 +2,7 @@
 A Codefresh onboarding tutorial.
 
 o
+
 Use this humble repository to familiarize yourself with basic Codefresh functionality once you've got the development
 environment set up.
 
