@@ -26,7 +26,7 @@ steps:
     type: build
     description: It builds the Djanga Service
     dockerfile: Dockerfile
-    image-name: noamt/${{djanga}}
+    image-name: haromani/djanga
     tag: nicetag
     #build-arguments:
     #  - FOO=BAR
