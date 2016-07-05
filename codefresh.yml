@@ -22,7 +22,7 @@ steps:
   #  commands:
   #    - tests/exec.sh
 
-  build-${{djanga}}:
+  build-djanga:
     type: build
     description: It builds the Djanga Service
     dockerfile: Dockerfile
@@ -33,5 +33,5 @@ steps:
 
   push-dockerhub:
     type: push
-    candidate: ${{build-${{djanga}}}}
-    tag: ${{CF_BRANCH}}:${{CF_REVISION}}
+    candidate: ${{build-djanga}}
+    tag: ${{CF_BRANCH}}-${{CF_REVISION}}
