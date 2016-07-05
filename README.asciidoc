@@ -1,7 +1,5 @@
 = DjangaI!
 A Codefresh onboarding tutorial.
-asd
-ssd
 
 o
 Use this humble repository to familiarize yourself with basic Codefresh functionality once you've got the development
