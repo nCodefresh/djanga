@@ -31,7 +31,7 @@ steps:
     #build-arguments:
     #  - FOO=BAR
 
-  #push-dockerhub:
-  #  type: push
-  #  candidate: ${{build-${{djanga}}}}
-  #  tag: awesomeness
+  push-dockerhub:
+    type: push
+    candidate: ${{build-${{djanga}}}}
+    tag: ${{CF_BRANCH}}:${{CF_REVISION}}
