@@ -1,17 +1,17 @@
 version: '1.0'
 #adding commentss
 steps:
-  clone-prj:
-    type: git-clone
-    repo: https://github.com/nCodefresh/docker-spring-boot.git
+  #clone-prj:
+  #  type: git-clone
+  #  repo: https://github.com/nCodefresh/docker-spring-boot.git
   
-  unit-test:
-    image: python:2-alpine
-    commands: 
-      - exit 0
-    environment:
-      - JIM=${{JIM}}
-      - PORT=${{PORT}}
+  #unit-test:
+  #  image: python:2-alpine
+  #  commands: 
+  #    - exit 0
+  #  environment:
+  #    - JIM=${{JIM}}
+  #    - PORT=${{PORT}}
 
   # Not implemented yet
   #integration-tests:
@@ -26,12 +26,12 @@ steps:
     type: build
     description: It builds the Djanga Service
     dockerfile: Dockerfile
-    image-name: davidcf/djanga
+    image-name: davidfeldi/djanga
     tag: nicetag
     #build-arguments:
     #  - FOO=BAR
 
-  push-dockerhub:
-    type: push
-    candidate: ${{build-djanga}}
-    tag: ${{CF_BRANCH}}-${{CF_REVISION}}
+  #push-dockerhub:
+  #  type: push
+  #  candidate: ${{build-djanga}}
+  #  tag: ${{CF_BRANCH}}-${{CF_REVISION}}
