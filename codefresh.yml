@@ -27,7 +27,7 @@ steps:
     description: It builds the Djanga Service
     dockerfile: Dockerfile
     image-name: davidfeldi/djanga
-    tag: nicetag
+    #tag: nicetag
     #build-arguments:
     #  - FOO=BAR
 
