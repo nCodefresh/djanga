@@ -26,7 +26,7 @@ steps:
     type: build
     description: It builds the Djanga Service
     dockerfile: Dockerfile
-    image-name: haromani/djanga
+    image-name: davidcf/djanga
     tag: nicetag
     #build-arguments:
     #  - FOO=BAR
