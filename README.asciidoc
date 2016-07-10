@@ -4,7 +4,7 @@ oasdasd
 asasd
 Use this humble repository to familiarize yourself with basic Codefresh functionality once you've got the development
 environment set up.
-
+asd
 This project uses Python Django to start a simple web application on port 8000.
 
 == Setting up the basic build
