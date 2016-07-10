@@ -1,7 +1,8 @@
 = DjangaI!
 A Codefresh onboarding tutorial.
 o
-test
+testas
+dasd
 
 Use this humble repository to familiarize yourself with basic Codefresh functionality once you've got the development
 environment set up.
