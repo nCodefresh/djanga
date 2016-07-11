@@ -36,5 +36,5 @@ steps:
     candidate: ${{build-djanga}}
     tag: ${{CF_BRANCH}}-${{CF_REVISION}}
     credentials: 
-      username: davidcf
-      password: Codefresh123
+      username: ${{username}}
+      password: ${{password}}
