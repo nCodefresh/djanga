@@ -31,7 +31,10 @@ steps:
     #build-arguments:
     #  - FOO=BAR
 
-  #push-dockerhub:
-  #  type: push
-  #  candidate: ${{build-djanga}}
-  #  tag: ${{CF_BRANCH}}-${{CF_REVISION}}
+  push-dockerhub:
+    type: push
+    candidate: ${{build-djanga}}
+    tag: ${{CF_BRANCH}}-${{CF_REVISION}}
+    credentials: 
+      username: davidcf
+      password: Codefresh123
